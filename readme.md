@@ -154,6 +154,12 @@ Show the sort-in-bucket and sort-out-bucket settings, including folder structure
 ### Buckets
 ![Buckets](screenshots/buckets.png)
 
+### Creating Trigger For Sort In
+![Creating Trigger For Sort In](screenshots/creating-trigger-for-sort-in.png)
+
+
+### Setting Automatic Trigger
+![Setting Automatic Trigger](screenshots/setting-automatic-trigger.png)
 
 ### Setting Sort In Bucket Trigger
 ![Setting Sort In Bucket Trigger](screenshots/setting-sort-in-bucket-trigger.png)
@@ -169,15 +175,21 @@ Show the sort-in-bucket and sort-out-bucket settings, including folder structure
 ### Uploading In Sorted Bucket
 ![Uploading In Sorted Bucket](screenshots/uploading-in-sorted-bucket.png)
 
+### Setting Bucket Policy
+![Setting Bucket Policy](screenshots/setting-bucket-policy.png)
+
+
 ### Uploading Unsorted File In Sort In Bucket
 ![Uploading Unsorted File In Sort In Bucket](screenshots/uploading-unsorted-file-in-sort-in-bucket.png)
-
-### Creating Trigger For Sort In
-![Creating Trigger For Sort In](screenshots/creating-trigger-for-sort-in.png)
 
 
 ### Getting Updated File In Sort Out Bucket
 ![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
+
+### Checking In Log Events
+![Checking In Log Events](screenshots/checking%20in%20log%20events.png)
+
+
 
 
 **b. Cognito Identity Pool Setup**
@@ -191,9 +203,6 @@ Show the configuration of your Cognito Identity Pool for authentication.
 ![Creating Identity Pool](screenshots/creating-identity-pool.png)
 
 
-### Creating S3 Unauth Policy
-![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
-
 
 
 
@@ -201,7 +210,35 @@ Show the configuration of your Cognito Identity Pool for authentication.
 Show the Lambda function setup, including environment variables, execution role, and trigger configuration.
 
 **Description:** Lambda function configuration screen.
-Screenshot:
+**Screenshot:**
+
+
+
+### Creating Iam User Roles
+![Creating Iam User Roles](screenshots/creating-iam-user-roles.png)
+
+### Adding Permissions To Role
+![Adding Permissions To Role](screenshots/adding-permissions-to-role.png)
+
+### Selecting Lambda As Trusted Entity
+![Selecting Lambda As Trusted Entity](screenshots/selecting-lambda-as-trusted-entity.png)
+
+
+
+### Creating S3 Unauth Policy
+![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
+
+### Resource Based Policy
+![Resource Based Policy](screenshots/resource-based-policy.png)
+
+### Lambda Review Page
+![Lambda Review Page](screenshots/lambda-review-page.png)
+
+
+### Role Summary Page
+![Role Summary Page](screenshots/role-summary-page.png)
+
+
 3. Code Snippets
 Show snippets of the code used in the project for context.
 
@@ -218,49 +255,10 @@ Screenshot
 ## Screenshots
 
 
-### Adding Permissions To Role
-![Adding Permissions To Role](screenshots/adding-permissions-to-role.png)
-
-
-
-
-### Checking In Log Events
-![Checking In Log Events](screenshots/checking%20in%20log%20events.png)
 
 
 
 
 
 
-### Creating Iam User Roles
-![Creating Iam User Roles](screenshots/creating-iam-user-roles.png)
 
-### Creating Iam User
-![Creating Iam User](screenshots/creating-iam-user.png)
-
-
-
-
-
-
-### Lambda Review Page
-![Lambda Review Page](screenshots/lambda-review-page.png)
-
-### Resource Based Policy
-![Resource Based Policy](screenshots/resource-based-policy.png)
-
-### Role Summary Page
-![Role Summary Page](screenshots/role-summary-page.png)
-
-### Selecting Lambda As Trusted Entity
-![Selecting Lambda As Trusted Entity](screenshots/selecting-lambda-as-trusted-entity.png)
-
-### Setting Automatic Trigger
-![Setting Automatic Trigger](screenshots/setting-automatic-trigger.png)
-
-### Setting Bucket Policy
-![Setting Bucket Policy](screenshots/setting-bucket-policy.png)
-
-
-### Writing Aws Lambda Function
-![Writing Aws Lambda Function](screenshots/writing-aws-lambda-function.png)
