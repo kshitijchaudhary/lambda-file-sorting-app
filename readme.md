@@ -387,12 +387,13 @@ def lambda_handler(event, context):
 **Description:** JavaScript file for the frontend logic.
 Screenshot
 ## Screenshots
+**Index.js File**
 ![Index File](screenshots/index-page.png)
-
+**App.js File**
 ![App JS file](screenshots/app-js-page.png)
-
+**Styles.css file**
 ![Styles file](screenshots/styles-page.png)
-
+**Lambda Function File**
 ![Lambda Function File](screenshots/lambda-function.png)
 
 
