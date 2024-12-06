@@ -97,7 +97,59 @@ During the upload and processing steps, the user is shown a progress bar indicat
 ### File Download:
  Once the file is sorted, the user can download the processed file by clicking the download button. The sorted file is made available via a signed URL from AWS S3, allowing secure download access.
 
+## Screenshots
 
+### Pages
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Choosing File From Device
+![Choosing File From Device](screenshots/choosing-file-from-device.png)
+
+### Uploading And Sorting File
+![Uploading And Sorting File](screenshots/uploading-and-sorting%20file.png)
+
+### Displaying Sorted File
+![Displaying Sorted File](screenshots/displaying-sorted-file.png)
+
+### Downloading Sorted File
+![Downloading Sorted File](screenshots/downloading-sorted-file.png)
+
+
+### 1. Lambda Function Execution
+Showcase the Lambda function working in the AWS Management Console to demonstrate file processing.
+
+Description: This screenshot highlights how the Lambda function processes an uploaded file, showing logs of its execution.
+Screenshot:
+2. AWS Setup
+a. S3 Bucket Configuration
+Show the sort-in-bucket and sort-out-bucket settings, including folder structure (unsorted/ and sorted-unsorted/).
+
+Description: Input and output S3 bucket configuration to show the folder hierarchy.
+Screenshot:
+b. Cognito Identity Pool Setup
+Show the configuration of your Cognito Identity Pool for authentication.
+
+Description: The Cognito Identity Pool setup with access permissions for S3 buckets.
+Screenshot:
+c. Lambda Function Setup
+Show the Lambda function setup, including environment variables, execution role, and trigger configuration.
+
+Description: Lambda function configuration screen.
+Screenshot:
+3. Code Snippets
+Show snippets of the code used in the project for context.
+
+a. Lambda Function Code
+Show the core Lambda function logic.
+
+Description: The Python code for the Lambda function used to process and sort the files.
+Screenshot:
+b. Frontend Code
+Show a snippet of the app.js file that handles file uploads and displays progress.
+
+Description: JavaScript file for the frontend logic.
+Screenshot
 ## Screenshots
 
 ### Aws Lambda Function Created
@@ -115,8 +167,6 @@ During the upload and processing steps, the user is shown a progress bar indicat
 ### Checking In Log Events
 ![Checking In Log Events](screenshots/checking%20in%20log%20events.png)
 
-### Choosing File From Device
-![Choosing File From Device](screenshots/choosing-file-from-device.png)
 
 ### Creating Lambda Function
 ![Creating Lambda Function](screenshots/creating%20lambda%20function.png)
@@ -154,17 +204,12 @@ During the upload and processing steps, the user is shown a progress bar indicat
 ### Deploying Aws Lambda Function
 ![Deploying Aws Lambda Function](screenshots/deploying-aws-lambda-function.png)
 
-### Displaying Sorted File
-![Displaying Sorted File](screenshots/displaying-sorted-file.png)
 
-### Downloading Sorted File
-![Downloading Sorted File](screenshots/downloading-sorted-file.png)
 
 ### Getting Updated File In Sort Out Bucket
 ![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
 
-### Homepage
-![Homepage](screenshots/homepage.png)
+
 
 ### Lambda Review Page
 ![Lambda Review Page](screenshots/lambda-review-page.png)
@@ -187,8 +232,6 @@ During the upload and processing steps, the user is shown a progress bar indicat
 ### Setting Sort In Bucket Trigger
 ![Setting Sort In Bucket Trigger](screenshots/setting-sort-in-bucket-trigger.png)
 
-### Showing Sorted File
-![Showing Sorted File](screenshots/showing-sorted-file.png)
 
 ### Sort In Bucket File
 ![Sort In Bucket File](screenshots/sort-in-bucket%20file.png)
@@ -199,8 +242,6 @@ During the upload and processing steps, the user is shown a progress bar indicat
 ### Testing Lambda Function
 ![Testing Lambda Function](screenshots/testing-lambda-function.png)
 
-### Uploading And Sorting File
-![Uploading And Sorting File](screenshots/uploading-and-sorting%20file.png)
 
 ### Uploading In Sorted Bucket
 ![Uploading In Sorted Bucket](screenshots/uploading-in-sorted-bucket.png)
