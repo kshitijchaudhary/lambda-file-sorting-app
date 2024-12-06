@@ -46,7 +46,7 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/kshitijchaudhary/lambda-file-sorting-app.git
 cd lambda-file-sorting-app
-Run Using Live Browser to test with link: https://github.com/kshitijchaudhary/lambda-file-sorting-app.git
+Run Using Live Browser to test with link: http://127.0.0.1:5500/frontend/index.html
 ```
 
 ## Setup AWS Services
@@ -76,7 +76,7 @@ To create the Lambda function:
 1. Go to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/).
 2. Click **Create function**.
 3. Select **Author from scratch** and name the function `file-sorting-function`.
-4. Choose a runtime (e.g., Python, Node.js, etc.).
+4. Choose a runtime as Python
 5. In the function code, include the logic to sort the uploaded file based on your criteria.
 6. Under **Permissions**, assign the function an IAM role that allows access to the S3 buckets.
 
@@ -116,12 +116,19 @@ Once the application is running, you will be able to interact with the system an
 
 The project is organized into the following structure:
 
-- **`index.html`**: The main HTML page where users can interact with the application. It includes the file upload interface, progress bar, and download options.
-- **`app.js`**: Contains the logic for handling file uploads, interacting with AWS services, and managing user input for file processing.
-- **`styles.css`**: Defines the styling for the application
-- **`.env`**: Contains environment variables required for AWS credentials to authenticate and authorize interactions with AWS services.
-- **`README.md`**: Provides documentation for the project, including setup instructions, usage details, and explanations of the workflow.
-- **`screenshots/`**: A folder containing images/screenshots demonstrating the application’s functionality.
+/file-sorting-app-aws-lambda
+│
+├── frontend/
+│   ├── index.html          # Main HTML page for file upload and interaction
+│   ├── app.js              # JavaScript file containing app logic
+│   └── styles.css          # Styling for the application
+│
+├── lambda_function/
+│   └── lambda_function.py  # Python code for the AWS Lambda function
+│
+├── .env                    # Environment variables for AWS credentials
+├── README.md               # Documentation for the project
+└── screenshots/            # Folder containing all project-related screenshots
 
 ---
 
@@ -152,21 +159,6 @@ The application follows these steps to allow users to upload, process, and downl
 
 This workflow ensures that users can easily upload files, track the progress of the sorting process, and download the final sorted file with minimal interaction.
 
-
-## Detailed Workflow
-User Uploads a File: The user selects a .txt or .csv file for upload. The file is validated to ensure it matches the required format. Once selected, the upload button becomes enabled, and the file is uploaded to the sort-in-bucket in AWS S3.
-
-
-### File Sorting Process: 
-Upon successful upload, an AWS Lambda function (file-sorting-function) is triggered. This function processes the file and sorts its data. The sorted data is then stored in the sort-out-bucket.
-
-
-### Progress Display: 
-During the upload and processing steps, the user is shown a progress bar indicating the status of the upload and the sorting process.
-
-
-### File Download:
- Once the file is sorted, the user can download the processed file by clicking the download button. The sorted file is made available via a signed URL from AWS S3, allowing secure download access.
 ## Screenshots
 
 ### Pages
@@ -288,7 +280,109 @@ Snippets of the code used in the project for context.
 
 **a. Lambda Function Code**
 **Description**: The Python code for the Lambda function used to process and sort the files.
-Screenshot:
+**Code:**
+```bash
+import json
+import boto3
+
+s3 = boto3.client('s3')
+
+def lambda_handler(event, context):
+    # Define your bucket names
+    input_bucket = 'sort-in-bucket'
+    output_bucket = 'sort-out-bucket'
+    
+    # If the event comes from an S3 trigger (uploaded file), process it
+    if 'Records' in event:
+        try:
+            # Get the file details from the S3 event
+            file_key = event['Records'][0]['s3']['object']['key']
+            
+            # Check if the file is under the 'unsorted/' folder in the input bucket
+            if not file_key.startswith('unsorted/'):
+                raise Exception('File is not in the expected "unsorted/" folder.')
+
+            # Retrieve the file content from the input bucket
+            file_obj = s3.get_object(Bucket=input_bucket, Key=file_key)
+            file_content = file_obj['Body'].read().decode('utf-8')
+            
+            # Split the content by newlines and sort it
+            sorted_content = '\n'.join(sorted(file_content.split('\n')))
+            
+            # Extract the filename (without the folder path)
+            file_name = file_key.split('/')[-1]
+
+            # Ensure we replace .txt with .srt
+            if file_name.endswith('.txt'):
+                output_key = f'sorted-unsorted/sorted-{file_name.replace(".txt", ".srt")}'
+            else:
+                output_key = f'sorted-unsorted/sorted-{file_name}.srt'  # Fallback in case it's not a .txt file
+            
+            # Upload the sorted file to the output bucket
+            s3.put_object(Bucket=output_bucket, Key=output_key, Body=sorted_content)
+            
+            # Return a success message
+            return {
+                'statusCode': 200,
+                'body': json.dumps(f'Successfully sorted and uploaded to {output_bucket}/{output_key}')
+            }
+        
+        except Exception as e:
+            # Handle any errors that occur during the process
+            return {
+                'statusCode': 500,
+                'body': json.dumps(f'Error processing file {file_key}: {str(e)}')
+            }
+    
+    # If the event is coming from a direct invocation (e.g., API Gateway or other sources)
+    elif 'key' in event:
+        try:
+            file_key = event['key']
+            
+            # Check if the file is under the 'unsorted/' folder in the input bucket
+            if not file_key.startswith('unsorted/'):
+                raise Exception('File is not in the expected "unsorted/" folder.')
+
+            # Retrieve the file content from the input bucket
+            file_obj = s3.get_object(Bucket=input_bucket, Key=file_key)
+            file_content = file_obj['Body'].read().decode('utf-8')
+            
+            # Split the content by newlines and sort it
+            sorted_content = '\n'.join(sorted(file_content.split('\n')))
+            
+            # Extract the filename (without the folder path)
+            file_name = file_key.split('/')[-1]
+
+            # Ensure we replace .txt with .srt
+            if file_name.endswith('.txt'):
+                output_key = f'sorted-unsorted/sorted-{file_name.replace(".txt", ".srt")}'
+            else:
+                output_key = f'sorted-unsorted/sorted-{file_name}.srt'  # Fallback in case it's not a .txt file
+            
+            # Upload the sorted file to the output bucket
+            s3.put_object(Bucket=output_bucket, Key=output_key, Body=sorted_content)
+            
+            # Return a success message
+            return {
+                'statusCode': 200,
+                'body': json.dumps(f'Successfully sorted and uploaded to {output_bucket}/{output_key}')
+            }
+        
+        except Exception as e:
+            # Handle any errors that occur during the process
+            return {
+                'statusCode': 500,
+                'body': json.dumps(f'Error processing file {file_key}: {str(e)}')
+            }
+    else:
+        return {
+            'statusCode': 400,
+            'body': json.dumps('Bad Request: Missing file key')
+        }
+
+```
+
+
 **b. Frontend Code**
 **Description:** JavaScript file for the frontend logic.
 Screenshot
