@@ -51,53 +51,29 @@ Clone the repository to your local machine:
 ```bash
 git clone https://github.com/your-username/your-repository-name.git
 cd your-repository-name
-2. Install Dependencies
-The project uses AWS SDK for JavaScript. To manage environment variables, you can use dotenv:
+```
 
-bash
-Copy code
-npm install dotenv
-3. Configure Environment Variables
-Create a .env file at the root of your project directory to configure AWS credentials and region.
+### 2. Set Up AWS Services
+**Create AWS S3 Buckets:**
+`sort-in-bucket` (for uploading files)
+`sort-out-bucket` (for storing processed files)
 
-bash
-Copy code
-AWS_REGION=us-east-2
-IDENTITY_POOL_ID=us-east-2:1a114e8d-32ad-4054-a1ea-0d13f3d0f289
-4. Set Up AWS Services
-Create AWS S3 Buckets:
+**Create AWS Lambda Function:**
+Create a Lambda function (`file-sorting-function`) that sorts the file and places it in the `sort-out-bucket`.
 
-sort-in-bucket (for uploading files)
-sort-out-bucket (for storing processed files)
-
-Create AWS Lambda Function:
-
-Create a Lambda function (file-sorting-function) that sorts the file and places it in the sort-out-bucket.
-
-Create IAM Roles:
-
+**Create IAM Roles:**
 Create IAM roles for AWS Lambda and AWS S3 to allow appropriate permissions for file processing.
 
-Set Up AWS Cognito:
+**Set Up AWS Cognito:**
 
 Set up a Cognito Identity Pool for authenticating users with the AWS services.
 
-5. Run the Application
+### 3. Run the Application
 You can run the project by opening the index.html file in a browser. If you're using a local server, serve the file through it. The app will interact with the AWS services to allow file uploads, sorting, and downloads.
 
-6. Push to GitHub
-Once everything is set up, push the repository to GitHub.
 
-bash
-Copy code
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/your-username/your-repository-name.git
-git push -u origin master
-Project Structure
-bash
-Copy code
+## Project Structure
+
 /project-root
   /index.html             # Main HTML page for file upload and interaction
   /app.js                 # JavaScript file containing app logic
@@ -105,14 +81,18 @@ Copy code
   /.env                   # Environment variables for AWS credentials
   /README.md              # Documentation for the project
   /screenshots            # Folder containing all project-related screenshots
-Detailed Workflow
+
+## Detailed Workflow
 User Uploads a File: The user selects a .txt or .csv file for upload. The file is validated to ensure it matches the required format. Once selected, the upload button becomes enabled, and the file is uploaded to the sort-in-bucket in AWS S3.
 
 
-File Sorting Process: Upon successful upload, an AWS Lambda function (file-sorting-function) is triggered. This function processes the file and sorts its data. The sorted data is then stored in the sort-out-bucket.
+### File Sorting Process: 
+Upon successful upload, an AWS Lambda function (file-sorting-function) is triggered. This function processes the file and sorts its data. The sorted data is then stored in the sort-out-bucket.
 
 
-Progress Display: During the upload and processing steps, the user is shown a progress bar indicating the status of the upload and the sorting process.
+### Progress Display: 
+During the upload and processing steps, the user is shown a progress bar indicating the status of the upload and the sorting process.
 
 
-File Download: Once the file is sorted, the user can download the processed file by clicking the download button. The sorted file is made available via a signed URL from AWS S3, allowing secure download access.
+### File Download:
+ Once the file is sorted, the user can download the processed file by clicking the download button. The sorted file is made available via a signed URL from AWS S3, allowing secure download access.
