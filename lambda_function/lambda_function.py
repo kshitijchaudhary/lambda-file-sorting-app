@@ -32,7 +32,7 @@ def lambda_handler(event, context):
             if file_name.endswith('.txt'):
                 output_key = f'sorted-unsorted/sorted-{file_name.replace(".txt", ".srt")}'
             else:
-                output_key = f'sorted-unsorted/sorted-{file_name}.srt'  # Fallback in case it's not a .txt file
+                output_key = f'sorted-unsorted/sorted-{file_name}.srt' 
             
             # Upload the sorted file to the output bucket
             s3.put_object(Bucket=output_bucket, Key=output_key, Body=sorted_content)
@@ -50,7 +50,7 @@ def lambda_handler(event, context):
                 'body': json.dumps(f'Error processing file {file_key}: {str(e)}')
             }
     
-    # If the event is coming from a direct invocation (e.g., API Gateway or other sources)
+    # If the event is coming from a direct invocation
     elif 'key' in event:
         try:
             file_key = event['key']
@@ -73,7 +73,7 @@ def lambda_handler(event, context):
             if file_name.endswith('.txt'):
                 output_key = f'sorted-unsorted/sorted-{file_name.replace(".txt", ".srt")}'
             else:
-                output_key = f'sorted-unsorted/sorted-{file_name}.srt'  # Fallback in case it's not a .txt file
+                output_key = f'sorted-unsorted/sorted-{file_name}.srt' 
             
             # Upload the sorted file to the output bucket
             s3.put_object(Bucket=output_bucket, Key=output_key, Body=sorted_content)

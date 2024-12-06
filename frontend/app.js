@@ -61,17 +61,16 @@ uploadFileButton.addEventListener('click', async () => {
   };
   reader.readAsText(file);
 
-  // Show "Uploading" text with progress 0%
-  statusMessage.style.display = 'block'; // Show status message
-  progressContainer.style.display = 'block'; // Show progress bar container
-  progressText.style.display = 'block'; // Show progress text
+  statusMessage.style.display = 'block'; 
+  progressContainer.style.display = 'block';
+  progressText.style.display = 'block'; 
   statusMessage.textContent = 'Uploading and Sorting File';
-  progressBar.style.width = '0%'; // Reset progress bar to 0%
+  progressBar.style.width = '0%'; 
 
   try {
     // Upload file to S3
     const params = {
-      Bucket: 'sort-in-bucket', // Input bucket name
+      Bucket: 'sort-in-bucket', 
       Key: fileKey,
       Body: file,
       ContentType: file.type,
@@ -82,8 +81,8 @@ uploadFileButton.addEventListener('click', async () => {
       .on('httpUploadProgress', function (progress) {
         if (progress.loaded && progress.total) {
           const percent = Math.round((progress.loaded / progress.total) * 100);
-          progressBar.style.width = percent + '%'; // Update progress bar width
-          progressText.textContent = `Uploading... ${percent}%`; // Update progress text
+          progressBar.style.width = percent + '%'; 
+          progressText.textContent = `Uploading... ${percent}%`; 
         }
       })
       .promise();
@@ -92,7 +91,7 @@ uploadFileButton.addEventListener('click', async () => {
 
     // Invoke the Lambda function to sort the file
     const lambdaParams = {
-      FunctionName: 'file-sorting-function', // Lambda function name
+      FunctionName: 'file-sorting-function', 
       Payload: JSON.stringify({
         Records: [
           {
@@ -119,9 +118,8 @@ uploadFileButton.addEventListener('click', async () => {
 async function checkSortedFile() {
     const outputFileName = `sorted-unsorted/sorted-${fileInput.files[0].name.replace('.txt', '.srt')}`;
 
-  //const outputFileName = `sorted-unsorted/sorted-${fileInput.files[0].name}`;
   const params = {
-    Bucket: 'sort-out-bucket', // Output bucket name
+    Bucket: 'sort-out-bucket',
     Key: outputFileName,
   };
 
@@ -134,14 +132,14 @@ async function checkSortedFile() {
       // Hide progress bar and status message after 2 seconds
       progressContainer.style.display = 'none';
       progressText.style.display = 'none';
-      statusMessage.style.display = 'none'; // Hide status message
-      uploadFileButton.textContent = 'Uploaded';  // Change button text to "Uploaded"
-      uploadFileButton.disabled = true;  // Disable button after upload completion
+      statusMessage.style.display = 'none'; 
+      uploadFileButton.textContent = 'Uploaded'; 
+      uploadFileButton.disabled = true; 
     }, 2000);
 
     // Show the download button for the sorted file
     downloadButton.style.display = 'block';
-    downloadButton.disabled = false; // Enable the download button
+    downloadButton.disabled = false; 
     downloadButton.onclick = function(event) {
         event.preventDefault();
 
@@ -149,17 +147,16 @@ async function checkSortedFile() {
       const downloadUrl = s3.getSignedUrl('getObject', {
         Bucket: 'sort-out-bucket',
         Key: outputFileName,
-        Expires: 60, // URL expiration time in seconds
+        Expires: 60,
       });
       
-      // Create an invisible link to trigger download without page refresh
+      // Create an invisible link to trigger download 
       const a = document.createElement('a');
       a.href = downloadUrl;
-      a.download = `sorted-${fileInput.files[0].name}`;  // Set the name for the downloaded file
+      a.download = `sorted-${fileInput.files[0].name}`;  
       a.style.display = 'none';
-      document.body.appendChild(a); // Append link to body
-      a.click();  // Trigger click to download the file
-      document.body.removeChild(a);  // Clean up by removing the link
+      document.body.appendChild(a); 
+      a.click();  
     };
   } catch (error) {
     console.error('Error retrieving sorted file:', error);
@@ -170,7 +167,7 @@ async function checkSortedFile() {
 // Function to populate a table with data
 function populateTable(tableId, data) {
   const tableBody = document.getElementById(tableId).querySelector('tbody');
-  tableBody.innerHTML = ''; // Clear existing content
+  tableBody.innerHTML = ''; 
 
   // Filter out empty rows
   const filteredData = data.filter(rowData => rowData.some(cellData => cellData.trim() !== ''));
