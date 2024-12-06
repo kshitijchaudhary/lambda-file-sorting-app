@@ -117,7 +117,9 @@ uploadFileButton.addEventListener('click', async () => {
 
 // Function to check for the sorted file in S3
 async function checkSortedFile() {
-  const outputFileName = `sorted-unsorted/sorted-${fileInput.files[0].name}`;
+    const outputFileName = `sorted-unsorted/sorted-${fileInput.files[0].name.replace('.txt', '.srt')}`;
+
+  //const outputFileName = `sorted-unsorted/sorted-${fileInput.files[0].name}`;
   const params = {
     Bucket: 'sort-out-bucket', // Output bucket name
     Key: outputFileName,

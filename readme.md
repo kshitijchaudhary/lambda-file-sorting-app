@@ -96,3 +96,117 @@ During the upload and processing steps, the user is shown a progress bar indicat
 
 ### File Download:
  Once the file is sorted, the user can download the processed file by clicking the download button. The sorted file is made available via a signed URL from AWS S3, allowing secure download access.
+
+
+## Screenshots
+
+### Aws Lambda Function Created
+![Aws Lambda Function Created](screenshots/aws-lambda-function-created.png)
+
+
+### Buckets
+![Buckets](screenshots/buckets.png)
+### Adding Permissions To Role
+![Adding Permissions To Role](screenshots/adding-permissions-to-role.png)
+
+
+
+
+### Checking In Log Events
+![Checking In Log Events](screenshots/checking%20in%20log%20events.png)
+
+### Choosing File From Device
+![Choosing File From Device](screenshots/choosing-file-from-device.png)
+
+### Creating Lambda Function
+![Creating Lambda Function](screenshots/creating%20lambda%20function.png)
+
+### Creating User Pool
+![Creating User Pool](screenshots/creating%20user%20pool.png)
+
+### Creating Aws Lambda Function
+![Creating Aws Lambda Function](screenshots/creating-aws-lambda-function.png)
+
+### Creating Iam User Roles
+![Creating Iam User Roles](screenshots/creating-iam-user-roles.png)
+
+### Creating Iam User
+![Creating Iam User](screenshots/creating-iam-user.png)
+
+### Creating Identity Pool
+![Creating Identity Pool](screenshots/creating-identity-pool.png)
+
+### Creating Lambda Project
+![Creating Lambda Project](screenshots/creating-lambda-project.png)
+
+### Creating S3 Unauth Policy
+![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
+
+### Creating Sort In Bucket
+![Creating Sort In Bucket](screenshots/creating-sort-in-bucket.png)
+
+### Creating Sort Out Bucket
+![Creating Sort Out Bucket](screenshots/creating-sort-out-bucket.png)
+
+### Creating Trigger For Sort In
+![Creating Trigger For Sort In](screenshots/creating-trigger-for-sort-in.png)
+
+### Deploying Aws Lambda Function
+![Deploying Aws Lambda Function](screenshots/deploying-aws-lambda-function.png)
+
+### Displaying Sorted File
+![Displaying Sorted File](screenshots/displaying-sorted-file.png)
+
+### Downloading Sorted File
+![Downloading Sorted File](screenshots/downloading-sorted-file.png)
+
+### Getting Updated File In Sort Out Bucket
+![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
+
+### Homepage
+![Homepage](screenshots/homepage.png)
+
+### Lambda Review Page
+![Lambda Review Page](screenshots/lambda-review-page.png)
+
+### Resource Based Policy
+![Resource Based Policy](screenshots/resource-based-policy.png)
+
+### Role Summary Page
+![Role Summary Page](screenshots/role-summary-page.png)
+
+### Selecting Lambda As Trusted Entity
+![Selecting Lambda As Trusted Entity](screenshots/selecting-lambda-as-trusted-entity.png)
+
+### Setting Automatic Trigger
+![Setting Automatic Trigger](screenshots/setting-automatic-trigger.png)
+
+### Setting Bucket Policy
+![Setting Bucket Policy](screenshots/setting-bucket-policy.png)
+
+### Setting Sort In Bucket Trigger
+![Setting Sort In Bucket Trigger](screenshots/setting-sort-in-bucket-trigger.png)
+
+### Showing Sorted File
+![Showing Sorted File](screenshots/showing-sorted-file.png)
+
+### Sort In Bucket File
+![Sort In Bucket File](screenshots/sort-in-bucket%20file.png)
+
+### Sort Out Bucket File
+![Sort Out Bucket File](screenshots/sort-out-bucket-file.png)
+
+### Testing Lambda Function
+![Testing Lambda Function](screenshots/testing-lambda-function.png)
+
+### Uploading And Sorting File
+![Uploading And Sorting File](screenshots/uploading-and-sorting%20file.png)
+
+### Uploading In Sorted Bucket
+![Uploading In Sorted Bucket](screenshots/uploading-in-sorted-bucket.png)
+
+### Uploading Unsorted File In Sort In Bucket
+![Uploading Unsorted File In Sort In Bucket](screenshots/uploading-unsorted-file-in-sort-in-bucket.png)
+
+### Writing Aws Lambda Function
+![Writing Aws Lambda Function](screenshots/writing-aws-lambda-function.png)
