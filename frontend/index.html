@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>File Sorting App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>File Upload and Sorting</h1>
+      
+        <!-- Status message section -->
+        <div id="status-message" class="status-message" style="display: none;"></div>
+      
+        <!-- File input and upload section -->
+        <div class="file-input-container">
+          <label for="file-input" class="choose-file-label">Choose File to Sort</label>
+          <input type="file" id="file-input" class="file-input" />
+      
+          <!-- Wrapper for buttons -->
+          <div class="button-container">
+            <button id="upload-file-button" class="upload-button" disabled>Upload File</button>
+            <button id="download-file-button" style="display: none;" disabled>Download Sorted File</button>
+          </div>
+      
+          <div id="file-name-display" class="file-name-display"></div>
+      
+          <!-- Progress bar for upload (Initially hidden) -->
+          <div id="progress-container" style="display: none;">
+            <div id="progress-bar" style="width: 0%; height: 20px; background-color: green;"></div>
+          </div>
+          <p id="progress-text" style="display: none;">Uploading... 0%</p> <!-- Initially hidden -->
+        </div>
+      </div>
+      
+    
+  <div class="table-container">
+    <!-- Left Table: Unsorted -->
+    <div class="table-wrapper">
+      <h2>Unsorted File Content</h2>
+      <table id="unsorted-table">
+        <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Address</th>
+              <th>Suite/Apt No</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Phone Number</th>
+              <th>Age</th>
+              <th>Profession</th>
+              <th>Unique ID</th>
+              <th>DOB</th>
+            </tr>
+          </thead>          
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Right Table: Sorted -->
+    <div class="table-wrapper">
+      <h2>Sorted File Content</h2>
+      <table id="sorted-table">
+        <thead>
+            <tr>
+              <th>Full Name</th>
+              <th>Address</th>
+              <th>Suite/Apt No</th>
+              <th>City</th>
+              <th>Country</th>
+              <th>Phone Number</th>
+              <th>Age</th>
+              <th>Profession</th>
+              <th>Unique ID</th>
+              <th>DOB</th>
+            </tr>
+          </thead>          
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1314.0.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
