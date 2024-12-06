@@ -115,7 +115,7 @@ Once the application is running, you will be able to interact with the system an
 ## Project Structure
 
 The project is organized into the following structure:
-
+```bash
 /file-sorting-app-aws-lambda
 │
 ├── frontend/
@@ -129,7 +129,7 @@ The project is organized into the following structure:
 ├── .env                    # Environment variables for AWS credentials
 ├── README.md               # Documentation for the project
 └── screenshots/            # Folder containing all project-related screenshots
-
+```
 ---
 
 ## Detailed Workflow
@@ -395,6 +395,7 @@ Screenshot
 ![Styles file](screenshots/styles-page.png)
 **Lambda Function File**
 ![Lambda Function File](screenshots/lambda-function.png)
+
 
 
 
