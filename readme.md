@@ -115,12 +115,12 @@ During the upload and processing steps, the user is shown a progress bar indicat
 ### Downloading Sorted File
 ![Downloading Sorted File](screenshots/downloading-sorted-file.png)
 
+### Handling Errors
+**Trying to Upload the different extension than txt or csv**
+![Error Uploading different extension rather than csv or txt file](screenshots/error-handling.png)
 
-### 1. Lambda Function Execution
-Lambda function working in the AWS Management Console to demonstrate file processing.
-
-Description: This screenshot highlights how the Lambda function processes an uploaded file, showing logs of its execution.
-Screenshots:
+### A. Lambda Function Execution
+**Screenshots:**
 
 ### Creating Aws Lambda Function
 ![Creating Aws Lambda Function](screenshots/creating-aws-lambda-function.png)
@@ -132,18 +132,11 @@ Screenshots:
 ### Deploying Aws Lambda Function
 ![Deploying Aws Lambda Function](screenshots/deploying-aws-lambda-function.png)
 
-
 ### Testing Lambda Function
 ![Testing Lambda Function](screenshots/testing-lambda-function.png)
 
-
-
-## 2. AWS Setup
+## B. AWS Setup
 **a. S3 Bucket Configuration**
-Show the sort-in-bucket and sort-out-bucket settings, including folder structure (unsorted/ and sorted-unsorted/).
-
-**Description**: Input and output S3 bucket configuration to show the folder hierarchy.
-
 **Screenshot**:
 ### Creating Sort In Bucket
 ![Creating Sort In Bucket](screenshots/creating-sort-in-bucket.png)
@@ -171,65 +164,44 @@ Show the sort-in-bucket and sort-out-bucket settings, including folder structure
 ### Sort Out Bucket File
 ![Sort Out Bucket File](screenshots/sort-out-bucket-file.png)
 
+### Uploading Unsorted File In Sort In Bucket
+![Uploading Unsorted File In Sort In Bucket](screenshots/uploading-unsorted-file-in-sort-in-bucket.png)
 
-### Uploading In Sorted Bucket
-![Uploading In Sorted Bucket](screenshots/uploading-in-sorted-bucket.png)
+### Getting Updated File In Sort Out Bucket
+![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
 
 ### Setting Bucket Policy
 ![Setting Bucket Policy](screenshots/setting-bucket-policy.png)
 
 
-### Uploading Unsorted File In Sort In Bucket
-![Uploading Unsorted File In Sort In Bucket](screenshots/uploading-unsorted-file-in-sort-in-bucket.png)
-
-
-### Getting Updated File In Sort Out Bucket
-![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
-
 ### Checking In Log Events
 ![Checking In Log Events](screenshots/checking%20in%20log%20events.png)
 
 
-
-
-**b. Cognito Identity Pool Setup**
+**C. Cognito Identity Pool Setup**
 Show the configuration of your Cognito Identity Pool for authentication.
 
 **Description:** The Cognito Identity Pool setup with access permissions for S3 buckets.
 **Screenshot:**
-
-
 ### Creating Identity Pool
 ![Creating Identity Pool](screenshots/creating-identity-pool.png)
 
-
-
-
-
-**c. Execution Roles**
+**D. Execution Roles**
 Show the Lambda function setup, including environment variables, execution role, and trigger configuration.
 
 **Description:** Lambda function configuration screen.
 **Screenshot:**
-
-
-
 ### Creating Iam User Roles
 ![Creating Iam User Roles](screenshots/creating-iam-user-roles.png)
-
-### Adding Permissions To Role
-![Adding Permissions To Role](screenshots/adding-permissions-to-role.png)
 
 ### Selecting Lambda As Trusted Entity
 ![Selecting Lambda As Trusted Entity](screenshots/selecting-lambda-as-trusted-entity.png)
 
-
+### Adding Permissions To Role
+![Adding Permissions To Role](screenshots/adding-permissions-to-role.png)
 
 ### Creating S3 Unauth Policy
 ![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
-
-### Resource Based Policy
-![Resource Based Policy](screenshots/resource-based-policy.png)
 
 ### Lambda Review Page
 ![Lambda Review Page](screenshots/lambda-review-page.png)
@@ -238,8 +210,12 @@ Show the Lambda function setup, including environment variables, execution role,
 ### Role Summary Page
 ![Role Summary Page](screenshots/role-summary-page.png)
 
+### Resource Based Policy
+![Resource Based Policy](screenshots/resource-based-policy.png)
 
-3. Code Snippets
+
+
+## E. Code Snippets
 Show snippets of the code used in the project for context.
 
 **a. Lambda Function Code**
@@ -253,6 +229,14 @@ Show a snippet of the app.js file that handles file uploads and displays progres
 **Description:** JavaScript file for the frontend logic.
 Screenshot
 ## Screenshots
+![Index File](screenshots/index-page.png)
+
+![App JS file](screenshots/app-js-page.png)
+
+![Styles file](screenshots/styles-page.png)
+
+![Lambda Function File](screenshots/lambda-function.png)
+
 
 
 
