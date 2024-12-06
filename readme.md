@@ -117,10 +117,27 @@ During the upload and processing steps, the user is shown a progress bar indicat
 
 
 ### 1. Lambda Function Execution
-Showcase the Lambda function working in the AWS Management Console to demonstrate file processing.
+Lambda function working in the AWS Management Console to demonstrate file processing.
 
 Description: This screenshot highlights how the Lambda function processes an uploaded file, showing logs of its execution.
-Screenshot:
+Screenshots:
+
+### Creating Aws Lambda Function
+![Creating Aws Lambda Function](screenshots/creating-aws-lambda-function.png)
+
+
+![Lambda Function created](screenshots/creating%20lambda%20function.png)
+
+
+### Deploying Aws Lambda Function
+![Deploying Aws Lambda Function](screenshots/deploying-aws-lambda-function.png)
+
+
+### Testing Lambda Function
+![Testing Lambda Function](screenshots/testing-lambda-function.png)
+
+
+
 2. AWS Setup
 a. S3 Bucket Configuration
 Show the sort-in-bucket and sort-out-bucket settings, including folder structure (unsorted/ and sorted-unsorted/).
@@ -152,10 +169,6 @@ Description: JavaScript file for the frontend logic.
 Screenshot
 ## Screenshots
 
-### Aws Lambda Function Created
-![Aws Lambda Function Created](screenshots/aws-lambda-function-created.png)
-
-
 ### Buckets
 ![Buckets](screenshots/buckets.png)
 ### Adding Permissions To Role
@@ -168,14 +181,12 @@ Screenshot
 ![Checking In Log Events](screenshots/checking%20in%20log%20events.png)
 
 
-### Creating Lambda Function
-![Creating Lambda Function](screenshots/creating%20lambda%20function.png)
+
 
 ### Creating User Pool
 ![Creating User Pool](screenshots/creating%20user%20pool.png)
 
-### Creating Aws Lambda Function
-![Creating Aws Lambda Function](screenshots/creating-aws-lambda-function.png)
+
 
 ### Creating Iam User Roles
 ![Creating Iam User Roles](screenshots/creating-iam-user-roles.png)
@@ -186,8 +197,6 @@ Screenshot
 ### Creating Identity Pool
 ![Creating Identity Pool](screenshots/creating-identity-pool.png)
 
-### Creating Lambda Project
-![Creating Lambda Project](screenshots/creating-lambda-project.png)
 
 ### Creating S3 Unauth Policy
 ![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
@@ -200,10 +209,6 @@ Screenshot
 
 ### Creating Trigger For Sort In
 ![Creating Trigger For Sort In](screenshots/creating-trigger-for-sort-in.png)
-
-### Deploying Aws Lambda Function
-![Deploying Aws Lambda Function](screenshots/deploying-aws-lambda-function.png)
-
 
 
 ### Getting Updated File In Sort Out Bucket
@@ -238,9 +243,6 @@ Screenshot
 
 ### Sort Out Bucket File
 ![Sort Out Bucket File](screenshots/sort-out-bucket-file.png)
-
-### Testing Lambda Function
-![Testing Lambda Function](screenshots/testing-lambda-function.png)
 
 
 ### Uploading In Sorted Bucket
