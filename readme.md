@@ -138,39 +138,86 @@ Screenshots:
 
 
 
-2. AWS Setup
-a. S3 Bucket Configuration
+## 2. AWS Setup
+**a. S3 Bucket Configuration**
 Show the sort-in-bucket and sort-out-bucket settings, including folder structure (unsorted/ and sorted-unsorted/).
 
-Description: Input and output S3 bucket configuration to show the folder hierarchy.
-Screenshot:
-b. Cognito Identity Pool Setup
+**Description**: Input and output S3 bucket configuration to show the folder hierarchy.
+
+**Screenshot**:
+### Creating Sort In Bucket
+![Creating Sort In Bucket](screenshots/creating-sort-in-bucket.png)
+
+### Creating Sort Out Bucket
+![Creating Sort Out Bucket](screenshots/creating-sort-out-bucket.png)
+
+### Buckets
+![Buckets](screenshots/buckets.png)
+
+
+### Setting Sort In Bucket Trigger
+![Setting Sort In Bucket Trigger](screenshots/setting-sort-in-bucket-trigger.png)
+
+
+### Sort In Bucket File
+![Sort In Bucket File](screenshots/sort-in-bucket%20file.png)
+
+### Sort Out Bucket File
+![Sort Out Bucket File](screenshots/sort-out-bucket-file.png)
+
+
+### Uploading In Sorted Bucket
+![Uploading In Sorted Bucket](screenshots/uploading-in-sorted-bucket.png)
+
+### Uploading Unsorted File In Sort In Bucket
+![Uploading Unsorted File In Sort In Bucket](screenshots/uploading-unsorted-file-in-sort-in-bucket.png)
+
+### Creating Trigger For Sort In
+![Creating Trigger For Sort In](screenshots/creating-trigger-for-sort-in.png)
+
+
+### Getting Updated File In Sort Out Bucket
+![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
+
+
+**b. Cognito Identity Pool Setup**
 Show the configuration of your Cognito Identity Pool for authentication.
 
-Description: The Cognito Identity Pool setup with access permissions for S3 buckets.
-Screenshot:
-c. Lambda Function Setup
+**Description:** The Cognito Identity Pool setup with access permissions for S3 buckets.
+**Screenshot:**
+
+
+### Creating Identity Pool
+![Creating Identity Pool](screenshots/creating-identity-pool.png)
+
+
+### Creating S3 Unauth Policy
+![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
+
+
+
+
+**c. Execution Roles**
 Show the Lambda function setup, including environment variables, execution role, and trigger configuration.
 
-Description: Lambda function configuration screen.
+**Description:** Lambda function configuration screen.
 Screenshot:
 3. Code Snippets
 Show snippets of the code used in the project for context.
 
-a. Lambda Function Code
+**a. Lambda Function Code**
 Show the core Lambda function logic.
 
-Description: The Python code for the Lambda function used to process and sort the files.
+**Description**: The Python code for the Lambda function used to process and sort the files.
 Screenshot:
-b. Frontend Code
+**b. Frontend Code**
 Show a snippet of the app.js file that handles file uploads and displays progress.
 
-Description: JavaScript file for the frontend logic.
+**Description:** JavaScript file for the frontend logic.
 Screenshot
 ## Screenshots
 
-### Buckets
-![Buckets](screenshots/buckets.png)
+
 ### Adding Permissions To Role
 ![Adding Permissions To Role](screenshots/adding-permissions-to-role.png)
 
@@ -183,9 +230,6 @@ Screenshot
 
 
 
-### Creating User Pool
-![Creating User Pool](screenshots/creating%20user%20pool.png)
-
 
 
 ### Creating Iam User Roles
@@ -194,25 +238,8 @@ Screenshot
 ### Creating Iam User
 ![Creating Iam User](screenshots/creating-iam-user.png)
 
-### Creating Identity Pool
-![Creating Identity Pool](screenshots/creating-identity-pool.png)
 
 
-### Creating S3 Unauth Policy
-![Creating S3 Unauth Policy](screenshots/creating-s3-unauth-policy.png)
-
-### Creating Sort In Bucket
-![Creating Sort In Bucket](screenshots/creating-sort-in-bucket.png)
-
-### Creating Sort Out Bucket
-![Creating Sort Out Bucket](screenshots/creating-sort-out-bucket.png)
-
-### Creating Trigger For Sort In
-![Creating Trigger For Sort In](screenshots/creating-trigger-for-sort-in.png)
-
-
-### Getting Updated File In Sort Out Bucket
-![Getting Updated File In Sort Out Bucket](screenshots/getting%20updated%20file%20in%20sort%20out%20bucket.png)
 
 
 
@@ -234,22 +261,6 @@ Screenshot
 ### Setting Bucket Policy
 ![Setting Bucket Policy](screenshots/setting-bucket-policy.png)
 
-### Setting Sort In Bucket Trigger
-![Setting Sort In Bucket Trigger](screenshots/setting-sort-in-bucket-trigger.png)
-
-
-### Sort In Bucket File
-![Sort In Bucket File](screenshots/sort-in-bucket%20file.png)
-
-### Sort Out Bucket File
-![Sort Out Bucket File](screenshots/sort-out-bucket-file.png)
-
-
-### Uploading In Sorted Bucket
-![Uploading In Sorted Bucket](screenshots/uploading-in-sorted-bucket.png)
-
-### Uploading Unsorted File In Sort In Bucket
-![Uploading Unsorted File In Sort In Bucket](screenshots/uploading-unsorted-file-in-sort-in-bucket.png)
 
 ### Writing Aws Lambda Function
 ![Writing Aws Lambda Function](screenshots/writing-aws-lambda-function.png)
