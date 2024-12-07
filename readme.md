@@ -381,6 +381,9 @@ Screenshot
 ![Lambda Function File](screenshots/lambda-function.png)
 
 **Author: Kshitij Chaudhary**
+
+---
+
 **Final Assignment - Cloud Computing**
 
 
