@@ -246,6 +246,12 @@ This workflow ensures that users can easily upload files, track the progress of 
 #### Creating Identity Pool
 ![Creating Identity Pool](screenshots/creating-identity-pool.png)
 
+#### Cognito File Sorting App UnAuth Role
+![Cognito File Sorting App UnAuth Role](screenshots/cognito_lambda_unauth_role.png)
+
+#### Setting Bucket Policy for UnAuthRole 
+![Setting Bucket Policy for UnAuthRole](screenshots/setting-bucket-policy-for-unauth-role.png)
+
 ---
 
 ### D. Execution Roles
@@ -374,8 +380,8 @@ Screenshot
 **Lambda Function File**
 ![Lambda Function File](screenshots/lambda-function.png)
 
-## Author: Kshitij Chaudhary
-## Final Assignment - Cloud Computing
+**Author: Kshitij Chaudhary**
+**Final Assignment - Cloud Computing**
 
 
 
